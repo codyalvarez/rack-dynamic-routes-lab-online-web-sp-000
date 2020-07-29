@@ -3,20 +3,45 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match"/items/"
-      if @@items.include?(@@item)
-        @@item.each do |item|
-          resp.write "#{item.price}"
-        end
-      elsif @@items.include?!(@@item)
-        resp.write "Route not found"
-        resp.status = 400
-      else
-        resp.write"Route not found"
-        resp.status = 404
-      end
-    end
+    # returns 404 for a bad route 
+    if req.path.match(/items/)
+      @@items.each do |item|
+        resp.write "#{item}"
+      elsif req.path.match(/search/)
 
-    resp.finish
-  end
+        search_term = req.params["q"]
+        
+      if @@items.include?(search_term)
+        resp.write "#{search_term}"
+      else
+        resp.write "Route not found"
+        resp.route 400
+      end
+
+      resp.finish
+    end
+  end 
+        
+
+  
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
