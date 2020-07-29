@@ -4,6 +4,11 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
+      # @@items.each do |item|
+      #   resp.write "#{item.price}"
+      # end
+
+      
 
     else
       resp.write "Route not found"
@@ -12,9 +17,6 @@ class Application
   end
 end
 
-
-
-#   # returns 404 for a bad route
 #   if req.path.match(/items/)
 #     @@items.each do |item|
 #       resp.write "#{item.price}"
