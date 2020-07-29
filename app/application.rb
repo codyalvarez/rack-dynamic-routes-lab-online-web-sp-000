@@ -7,6 +7,7 @@ class Application
       if @@items.include?(@@item)
         @@item.each do |item|
           resp.write "#{item.price}"
+        end
       elsif @@items.include?!(@@item)
         resp.write "Route not found"
         resp.status = 400
