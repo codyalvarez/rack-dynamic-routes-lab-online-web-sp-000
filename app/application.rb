@@ -6,7 +6,7 @@ class Application
     if req.path.match"/items/"
       if @@items.include?(@@item)
         item_price = @@item[1]
-        resp.write write item_price
+        resp.write item_price
       elsif @@items.include?!(@@item)
         resp.write "Route not found"
         resp.status = 400
