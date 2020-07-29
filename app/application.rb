@@ -3,6 +3,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+    @@items = []
+
     if req.path.match(/items/)
       if @@items.include?(@@item)
         resp.write "#{@@item.price}"
