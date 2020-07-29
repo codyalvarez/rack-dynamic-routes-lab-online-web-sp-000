@@ -25,7 +25,3 @@ class Application
     end
   end
 end
-
-
-
-
