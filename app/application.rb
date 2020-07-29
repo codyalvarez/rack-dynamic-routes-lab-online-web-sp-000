@@ -15,7 +15,7 @@ class Application
         resp.write "#{search_term}"
       else
         resp.write "Route not found"
-        resp.route 400
+        resp.status 400
       end
 
       resp.finish
