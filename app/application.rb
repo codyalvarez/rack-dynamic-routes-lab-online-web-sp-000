@@ -5,8 +5,8 @@ class Application
 
     if req.path.match"/items/"
       if @@items.include?(@@item)
-        item_price = @@item.price
-        resp.write item_price
+        @@item.each do |item|
+          resp.write "#{item.price}"
       elsif @@items.include?!(@@item)
         resp.write "Route not found"
         resp.status = 400
