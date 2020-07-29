@@ -7,11 +7,12 @@ class Application
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item.price}"
-      elsif req.path.match(/search/)
+      end
+      if req.path.match(/search/)
 
         search_term = req.params["q"]
 
-      if @@items.include?(search_term)
+      elsif @@items.include?(search_term)
         resp.write "#{search_term}"
       elsif @@items.include?!(search_term)
         resp.write "Route not found"
