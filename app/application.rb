@@ -6,7 +6,7 @@ class Application
     # returns 404 for a bad route
     if req.path.match(/items/)
       @@items.each do |item|
-        resp.write "#{item}"
+        resp.write "#{item.price}"
       elsif req.path.match(/search/)
 
         search_term = req.params["q"]
