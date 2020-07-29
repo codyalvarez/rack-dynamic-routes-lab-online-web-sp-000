@@ -5,7 +5,7 @@ class Application
 
     @@items = []
 
-    if req.path.match(/items/)
+    if req.path.match(/items/)      
       if @@items.include?(@@item)
         resp.write "#{@@item.price}"
     else
