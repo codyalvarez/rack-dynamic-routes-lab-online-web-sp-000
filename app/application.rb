@@ -8,7 +8,7 @@ class Application
       @@items.each do |item|
         resp.write "#{item.price}"
       end
-      if req.path.match(/search/)
+    elsif req.path.match(/search/)
 
         search_term = req.params["q"]
 
