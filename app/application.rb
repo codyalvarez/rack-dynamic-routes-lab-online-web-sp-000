@@ -4,8 +4,7 @@ class Application
     req = Rack::Request.new(env)
 
     @@items = []
-    @@item = Item.new(:name, :price)
-    @@items << @@item
+    @@item = Item.new(:name, :price
 
     if req.path.match(/items/) && @@items.include?(@@item)
       # if @@items.include?(@@item)
