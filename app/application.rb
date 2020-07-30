@@ -5,7 +5,7 @@ class Application
 
     @@items = []
 
-    if req.path.match(/items/) && @@item.include?(@@items)
+    if req.path.match(/items/) && @@items.include?(@@item)
       # if @@items.include?(@@item)
         resp.write "#{@@item.price}"\
       elsif @@items.include?!(@@item)
