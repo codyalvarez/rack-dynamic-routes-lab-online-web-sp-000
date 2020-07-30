@@ -8,8 +8,8 @@ class Application
     @@item = Item.new(:name, :price)
 
     if req.path.match(/items/)
+      binding.pry
       if @@items.include?(@@item)
-          binding.pry
         resp.write "#{@@item.price}"
       elsif !@@items.include?(@@item)
         resp.write "Item not found"
