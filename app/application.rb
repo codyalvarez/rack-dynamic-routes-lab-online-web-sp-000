@@ -6,11 +6,11 @@ class Application
     @@items = []
 
     if req.path.match(/items/)
-      # if @@items.include?(@@item)
-      #   resp.write "#{@@item.price}"\
-      # elsif @@items.include?!(@@item)
-      #   resp.write "Item not found"
-      #   resp.status 400
+      if @@items.include?(@@item)
+        resp.write "#{@@item.price}"\
+      elsif @@items.include?!(@@item)
+        resp.write "Item not found"
+        resp.status 400
       else
         resp.write "Route not found"
         resp.status = 404
