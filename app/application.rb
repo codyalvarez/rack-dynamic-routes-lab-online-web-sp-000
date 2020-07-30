@@ -1,3 +1,4 @@
+require "pry"
 class Application
   def call(env)
     resp = Rack::Response.new
@@ -9,6 +10,7 @@ class Application
     if req.path.match(/items/)
       if @@items.include?(@@item)
         resp.write "#{@@item.price}"
+        binding.pry
       elsif !@@items.include?(@@item)
         resp.write "Item not found"
         resp.status = 400
