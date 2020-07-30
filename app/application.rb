@@ -4,7 +4,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    @@items = []
+    # @@items = []
     item = req.path.split("/items/").last
 
     if req.path.match(/items/)
