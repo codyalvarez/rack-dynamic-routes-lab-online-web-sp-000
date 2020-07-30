@@ -10,8 +10,7 @@ class Application
     item = req.path.split("/items/").last
 
     if req.path.match(/items/)
-      if @@items.include?(item)
-        binding.pry
+      if @@items.find(item)
         resp.write "#{item.price}"
       else
         resp.write "Item not found"
