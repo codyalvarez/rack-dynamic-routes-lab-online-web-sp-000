@@ -10,12 +10,12 @@ class Application
     if req.path.match(/items/)
       binding.pry
       if @@items.include?(@@item)
-        resp.write "#{@@item.price}"
+        resp.write "#{@@item[1]}"
       elsif !@@items.include?(@@item)
         resp.write "Item not found"
         resp.status = 400
       end
-    else
+    else@@
         resp.write "Route not found"
         resp.status = 404
       end
