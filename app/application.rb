@@ -5,6 +5,7 @@ class Application
 
     @@items = []
     @@item = Item.new(:name, :price)
+    @@items << @@item
 
     if req.path.match(/items/) && @@items.include?(@@item)
       # if @@items.include?(@@item)
