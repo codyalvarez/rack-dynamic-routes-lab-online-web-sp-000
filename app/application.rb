@@ -7,7 +7,6 @@ class Application
     @@item = Item.new(:name, :price)
 
     if req.path.match(/items/) && @@items.include?(@@item)
-      # if @@items.include?(@@item)
         resp.write "#{@@item.price}"\
       elsif @@items.include?!(@@item)
         resp.write "Item not found"
